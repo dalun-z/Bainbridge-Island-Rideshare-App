@@ -13,3 +13,9 @@
 **Client Contact Email: (mepstein@bainbridgewa.gov)**
 
 
+
+## Background
+
+### Purpose
+
+Facilitate carpooling between residents of Bainbridge Island by providing a non-commercial platform for residents to list and find carpool opportunities. User experience will be further enhanced by matching commuters.
