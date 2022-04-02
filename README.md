@@ -33,5 +33,12 @@ https://www.youtube.com/watch?v=0-S5a0eXPoc&t=581s (Video produced by "Programmi
 
 ### 'assets' folder store all the images and videos of the app
 
+### To run your project, navigate to the directory and run one of the following npm commands.
+- cd BICridershare
+- npm start   # you can open IOS, Android, or web from here, or run them directly with the commands below.
+- npm run android
+- npm run ios   # requires an IOS device or macOS for access to an IOS simulator
+- npm run web
+
 
 
