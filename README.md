@@ -32,6 +32,9 @@ The Bainbridge Island Carpool project is to build a rideshare app for the reside
 - Run 'npm -v' on your terminal to check the version of your npm and node.js version
 - Run 'npm install -g expo-cli' to install expo environment on your pc
 
+### Development environment
+- node version: v16.14.2
+- npm version: 8.5.0
 
 ### routines:
 - npm start 
