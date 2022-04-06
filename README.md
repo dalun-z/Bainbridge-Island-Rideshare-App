@@ -31,7 +31,8 @@ The Bainbridge Island Carpool project is to build a rideshare app for the reside
 - Download & Install Node.Js from website
 - Run 'npm -v' on your terminal to check the version of your npm and node.js version
 - Run 'npm install -g expo-cli' to install expo environment on your pc
-- 
+
+https://www.youtube.com/watch?v=QLCccxjHRzY (React Native git repo setup)
 
 https://www.youtube.com/watch?v=0-S5a0eXPoc&t=581s (Video produced by "Programming with Mosh", contents of how to build an app with React Native. Please take some time to take a look at it if you have question.)
 
