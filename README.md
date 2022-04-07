@@ -32,19 +32,29 @@ The Bainbridge Island Carpool project is to build a rideshare app for the reside
 - Run 'npm -v' on your terminal to check the version of your npm and node.js version
 - Run 'npm install -g expo-cli' to install expo environment on your pc
 
-### Development environment
+### Development environment Requirements
+
 - node version: v16.14.2
 - npm version: 8.5.0
 
-### routines:
-- npm start 
 
-if not work says Unable to find expo in this project - have you run yarn / npm install yet? (ignore every single error message, DO NOT try to troubleshoot it, and follow the step):
-- npm install expo
-- npm install
-- npm start
+### Routines to setup repo on your machine:
+```
+git clone $ThisRepoURL$
+cd BICRideshare
+npm start 
+```
 
-https://www.youtube.com/watch?v=QLCccxjHRzY (React Native git repo setup)
+**if not working, error message says 'Unable to find expo in this project - have you run yarn / npm install yet?'
+PLEASE ignore the error message and DO NOT try to troubleshoot it yourself, it will just make it worse
+PLEASE follow the steps below:**
+```
+npm install expo
+npm install
+/*Then pray*/
+npm start
+/*It should work now*/
+```
 
 https://www.youtube.com/watch?v=0-S5a0eXPoc&t=581s (Video produced by "Programming with Mosh", contents of how to build an app with React Native. Please take some time to take a look at it if you have question.)
 
