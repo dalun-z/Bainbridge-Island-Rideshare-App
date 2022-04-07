@@ -28,7 +28,7 @@ The Bainbridge Island Carpool project is to build a rideshare app for the reside
 ## For developers
 
 ### Setting up the development enviornmnet on your local machine
-- Download & Install Node.Js from website
+- Download & Install Node.Js from website (the LTS version)
 - Run 'npm -v' on your terminal to check the version of your npm and node.js version
 - Run 'npm install -g expo-cli' to install expo environment on your pc
 
