@@ -1,6 +1,6 @@
 # Bainbridge-Island-Rideshare-App
 
-**Team member: Andrew Rose, Dalun Zhang, Jireh Radilla Zarate, Joe Linkdbeck, Justin Erickson, Thuan Nguyen**
+**Team member: Andrew Rose, Dalun Zhang, Jireh Radilla Zarate, Joe Lindbeck, Justin Erickson, Thuan Nguyen**
 
 **Proposed Project Start Date: 01/10/2022**
 
