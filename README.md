@@ -62,7 +62,7 @@ https://www.youtube.com/watch?v=J_Clau1bYco (Video produced by "ProgrammingKnowl
 
 ### **PLEASE** create your branch before you start working on the project
 
-https://medium.com/@jonathanmines/the-ultimate-github-collaboration-guide-df816e98fb67 (Collaborating guide)
+https://medium.com/@jonathanmines/the-ultimate-github-collaboration-guide-df816e98fb67 (Collaboration guide)
 
 ### 'assets' folder store all the images and videos of the app
 
