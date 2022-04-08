@@ -60,7 +60,7 @@ https://www.youtube.com/watch?v=0-S5a0eXPoc&t=581s (Video produced by "Programmi
 
 https://www.youtube.com/watch?v=J_Clau1bYco (Video produced by "ProgrammingKnowledge2", contents of how to config GitHub on Windows, if you have problem doing that, please watch this.)
 
-**Now, setup the navigation
+### Setup Navigation between the screen
 
 - To install & setup navigation
 ```
