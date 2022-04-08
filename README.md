@@ -27,6 +27,9 @@ The Bainbridge Island Carpool project is to build a rideshare app for the reside
 
 ## For developers
 
+### SUPER HELPFUL LINK : https://reactnative.dev/docs/getting-started !!!
+
+
 ### Setting up the development enviornmnet on your local machine
 - Download & Install Node.Js from website (the LTS version)
 - Run 'npm -v' on your terminal to check the version of your npm and node.js version
@@ -43,6 +46,7 @@ npm install @react-navigation/native @react-navigation/native-stack
 ```
 expo install react-native-screens react-native-safe-area-context
 ```
+(https://reactnative.dev/docs/navigation) Read the React Native documentation if you have any question.
 
 ### Development environment Requirements
 
