@@ -4,9 +4,9 @@ import { View, Text, Button, StyleSheet, StatusBar } from 'react-native';
 const HomeScreen = ({navigation}) => {
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-          <Text>Welcome to PDSU</Text>
+          <Text>Welcome to your Profile</Text>
           <Button 
-            title ="click me to jump to sign in page"
+            title ="click me to jump to sign in page (2)"
             onPress={ () => navigation.navigate("SignIn")}
           />
         </View>
@@ -23,3 +23,6 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
     },
   });
+
+
+

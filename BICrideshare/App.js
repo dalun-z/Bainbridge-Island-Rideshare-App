@@ -11,9 +11,11 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 import HomeScreen from './screen/HomeScreen';
 import SignInScreen from './screen/SignInScreen';
+import ProfileScreen from './screen/ProfileScreen';
 
 const HomeStack = createNativeStackNavigator();
 const SignInStack = createNativeStackNavigator();
+const ProfileStack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
 
 const HomeStackScreen = ({navigation}) =>(
@@ -53,7 +55,7 @@ const SignInStackScreen = ({navigation}) =>(
   }}>
     <SignInStack.Screen name="SignIn" component={SignInScreen} options={{
       // Change the name of the tile of the current page
-      title:'PDSU',
+      title:'Bainbridge Carpool Sign-In',
       headerLeft: () => (
         <Icon.Button  name="menu" 
                       size={25} 
@@ -65,12 +67,37 @@ const SignInStackScreen = ({navigation}) =>(
   </SignInStack.Navigator>
 );
 
+const ProfileStackScreen = ({navigation}) =>(
+  <ProfileStack.Navigator screenOptions={{
+    headerStyle: {
+      backgroundColor: '#deb887',
+    },
+    headerTintColor: '#ffff',
+    headerTitleStyle: {
+      fontWeight: 'bold'
+    }
+  }}>
+    <SignInStack.Screen name="Profile" component={ProfileScreen} options={{
+      // Change the name of the tile of the current page
+      title:'Your Profile',
+      headerLeft: () => (
+        <Icon.Button  name="menu" 
+                      size={25} 
+                      backgroundColor="#deb887" 
+                      onPress = {() => {navigation.openDrawer()}}>
+        </Icon.Button>
+      )
+    }} />
+  </ProfileStack.Navigator>
+);
+
 const App = () => {
   return (
     <NavigationContainer>
       <Drawer.Navigator initialRouteName="Home">
         <Drawer.Screen name = "Home" component={HomeStackScreen} />
         <Drawer.Screen name = "SignIn" component={SignInStackScreen} />
+        <Drawer.Screen name = "Profile" component={ProfileScreen} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
