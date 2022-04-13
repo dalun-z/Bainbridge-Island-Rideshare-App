@@ -7,7 +7,7 @@ const SignInScreen = ({navigation}) =>{
         <Text>Sign In Screen</Text>
         <Button 
           title ="go to the same page again"
-          onPress={ () => navigation.push("SignIn")}
+          onPress={ () => navigation.navigate("SignIn")}
         />
         <Button 
           title ="back to home"

@@ -1,23 +1,44 @@
 import * as React from 'react';
-import { View, Text, Button, StyleSheet, StatusBar } from 'react-native';
+import { View, Text, Button, StyleSheet, Image } from 'react-native';
 
-const HomeScreen = ({navigation}) => {
+const ProfileScreen = ({navigation}) => {
     return (
-        <View style={{ flex: 2, alignItems: 'top', justifyContent: 'top' }}>
+        <View style={styles.container}>
           <View style = {styles.profileImageContainer}>
-            <Text>Insert Profile Pciture here</Text>
+            <Image source = {require('../assets/freeman.png')} style = {styles.profileImageCircle} />
+            <Text style = {styles.profileImageName}>Morgan Freeman</Text>
           </View>
+          
           <View style = {styles.profileTextContainer}>
-            <Text>Insert profile information here</Text>
-            <Button
-              title="Sign in here!"
-              onPress={() => navigation.navigate("SignIn")} />
+            <View style = {styles.profileTextBox}>
+              <Text style={styles.profileTextEntry}>Username</Text>
+            </View>
+            <View style = {styles.profileTextBox}>
+              <Text style={styles.profileTextEntry}>Phone Number</Text>
+            </View>
+            <View style = {styles.profileTextBox}>
+              <Text style={styles.profileTextEntry}>Address?</Text>
+            </View>
+            <View style = {styles.profileTextBox}>
+              <Text style={styles.profileTextEntry}>Rating</Text>
+            </View>
+            <View style = {styles.profileTextBox}>
+              <Text style={styles.profileTextEntry}>Rides Completed</Text>
+            </View>
+            <View style = {styles.profileTextBox}>
+              <Text style={styles.profileTextEntry}>Rider/Driver</Text>
+            </View>
+          </View>
+          <View style = {styles.signOutButton}>
+              <Button 
+                title="Sign out!"
+                onPress={() => navigation.navigate("Home")} />
           </View>
         </View>
     );
 };
 
-export default HomeScreen;
+export default ProfileScreen;
 
 const styles = StyleSheet.create({
     container: {
@@ -32,12 +53,45 @@ const styles = StyleSheet.create({
       backgroundColor: 'gray',
       alignItems: 'center',
       justifyContent: 'center',
+      borderWidth: 3,
+      borderColor: 'black'
+    },
+    profileImageCircle: {
+      width: 150,
+      height: 150,
+      borderRadius: 150 / 2,
+      overflow: "hidden",
+      borderWidth: 3,
+      borderColor: "black"
+    },
+    profileImageName: {
+      alignItems: 'flex-end',
+      fontSize: 25,
+      color: 'white'
     },
     profileTextContainer: {
       width: '100%',
       flex: 5,
-      backgroundColor: 'white',
-      alignItems: 'center',
-      justifyContent: 'center'
+      flexDirection: 'column',
+      alignItems: 'flex-start',
+      justifyContent: 'flex-start',
+      alignContent: 'space-between',
+      paddingTop: 10
+    },
+    profileTextBox: {
+      // borderTopWidth: 2,
+      // borderTopColor: 'gray',
+      borderBottomWidth: 1,
+      borderBottomColor: 'gray',
+      width: '100%',
+      padding: 20
+    },
+    profileTextEntry: {
+      
+    },
+    signOutButton: {
+      flex: 2,
+      justifyContent: 'flex-start',
+      alignItems: 'center'
     }
   });
