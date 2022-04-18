@@ -1,13 +1,9 @@
 import 'react-native-gesture-handler';
 import * as React from 'react';
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-
-import Icon from 'react-native-vector-icons/Ionicons';
 
 import HomeScreen from './screen/HomeScreen';
 import SignInScreen from './screen/SignInScreen';
@@ -20,8 +16,8 @@ const App = () => {
     <NavigationContainer>
       <Drawer.Navigator initialRouteName="Home">
         <Drawer.Screen name = "Home" component={HomeScreen} />
-        <Drawer.Screen name = "SignIn" component={SignInScreen} />
-        <Drawer.Screen name = "Profile" component={ProfileScreen} />
+        <Drawer.Screen name = "SignIn" component={SignInScreen}/>
+        <Drawer.Screen name = "Profile" component={ProfileScreen}/>
       </Drawer.Navigator>
     </NavigationContainer>
   );

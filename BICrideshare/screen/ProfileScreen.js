@@ -5,8 +5,8 @@ const ProfileScreen = ({navigation}) => {
     return (
         <View style={styles.container}>
           <View style = {styles.profileImageContainer}>
-            <Image source = {require('../assets/freeman.png')} style = {styles.profileImageCircle} />
-            <Text style = {styles.profileImageName}>Morgan Freeman</Text>
+            <Image source = {require('../assets/elon.png')} style = {styles.profileImageCircle} />
+            <Text style = {styles.profileImageName}>Elon Musk</Text>
           </View>
           
           <View style = {styles.profileTextContainer}>
@@ -91,7 +91,8 @@ const styles = StyleSheet.create({
     },
     signOutButton: {
       flex: 2,
-      justifyContent: 'flex-start',
-      alignItems: 'center'
+      justifyContent: 'flex-end',
+      alignItems: 'center',
+      paddingBottom: 2
     }
   });
