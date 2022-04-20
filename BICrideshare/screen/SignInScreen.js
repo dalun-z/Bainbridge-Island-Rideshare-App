@@ -6,8 +6,10 @@ const axios = require('axios');
 
 const SignInScreen = ({navigation}) => {
   // Change this to be your local machine's IP
-  // Eventually change to AWS EC2 IP
   const url = 'http://10.0.0.89:8080'
+  
+  //AWS EC2 IP
+  // const url = 'http://44.226.145.15:8080'
 
   // State management for input fields
   const [usernameText, setUsernameText] = useState('');
@@ -93,6 +95,21 @@ const SignInScreen = ({navigation}) => {
             title="Send input fields to backend"
             onPress={ () => {
               axios.post(url + '/signin', {
+                username: usernameText,
+                password: passwordText,
+                confirmPassword: confirmPasswordText,
+                email: emailText,
+                phone: phoneNumberText,
+                address: addressText
+              })
+              clearText();
+              navigation.navigate("Home")
+            }}
+          />
+          <Button
+            title="Send new user to DB"
+            onPress={ () => {
+              axios.post(url + '/signup', {
                 username: usernameText,
                 password: passwordText,
                 confirmPassword: confirmPasswordText,

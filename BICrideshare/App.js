@@ -8,15 +8,21 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import HomeScreen from './screen/HomeScreen';
 import SignInScreen from './screen/SignInScreen';
 import ProfileScreen from './screen/ProfileScreen';
+import RidesScreen from './screen/RidesScreen';
 
 const Drawer = createDrawerNavigator();
 
 const App = () => {
+  const testUser = {
+    name: "Andrew Rose"
+  }
+
   return (
     <NavigationContainer>
       <Drawer.Navigator initialRouteName="Home">
-        <Drawer.Screen name = "Home" component={HomeScreen} />
+        <Drawer.Screen name = "Home" component={HomeScreen}/>
         <Drawer.Screen name = "SignIn" component={SignInScreen}/>
+        <Drawer.Screen name = "Rides" component={RidesScreen}/>
         <Drawer.Screen name = "Profile" component={ProfileScreen}/>
       </Drawer.Navigator>
     </NavigationContainer>

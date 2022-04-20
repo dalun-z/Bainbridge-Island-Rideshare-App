@@ -1,7 +1,15 @@
 import * as React from 'react';
 import { View, Text, Button, StyleSheet, Image } from 'react-native';
 
-const ProfileScreen = ({navigation}) => {
+const axios = require('axios');
+
+const ProfileScreen = ({ navigation}) => {
+    // Change this to be your local machine's IP
+    const url = 'http://10.0.0.89:8080'
+    
+    //AWS EC2 IP
+    // const url = 'http://44.226.145.15:8080'
+
     return (
         <View style={styles.container}>
           <View style = {styles.profileImageContainer}>
@@ -32,7 +40,21 @@ const ProfileScreen = ({navigation}) => {
           <View style = {styles.signOutButton}>
               <Button 
                 title="Sign out!"
-                onPress={() => navigation.navigate("Home")} />
+                onPress={() => navigation.navigate("Home")}
+              />
+                <Button 
+                title="Test Query"
+                onPress={ () => {
+                  axios.get(url + '/userTest')
+                    .then(response => {
+                      // handle success
+                      console.log(response.data);
+                    })
+                    .catch(error => {
+                      // handle error
+                      console.log(error);
+                    })}}
+              />
           </View>
         </View>
     );

@@ -5,8 +5,10 @@ const axios = require('axios');
 
 const HomeScreen = ({navigation}) => {
   // Change this to be your local machine's IP
-  // Eventually change to AWS EC2 IP
   const url = 'http://10.0.0.89:8080'
+
+  // Eventually change to AWS EC2 IP
+  // const url = 'http://44.226.145.15:8080'
 
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center'}}>
