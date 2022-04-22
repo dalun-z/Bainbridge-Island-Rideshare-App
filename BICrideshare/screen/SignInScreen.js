@@ -4,13 +4,15 @@ import { View, Text, Button, StyleSheet, StatusBar, TextInput } from 'react-nati
 
 const axios = require('axios');
 
-const SignInScreen = ({navigation}) => {
-  // Change this to be your local machine's IP
-  const url = 'http://10.0.0.89:8080'
+// Change this to be your local machine's IP
+const url = 'http://10.0.0.89:8080'
   
-  //AWS EC2 IP
-  // const url = 'http://44.226.145.15:8080'
+//AWS EC2 IP
+// const url = 'http://44.226.145.15:8080'
 
+const SignInScreen = ({navigation}) => {
+  
+  
   // State management for input fields
   const [usernameText, setUsernameText] = useState('');
   const [passwordText, setPasswordText] = useState('');
