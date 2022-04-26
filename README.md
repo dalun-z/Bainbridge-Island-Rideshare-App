@@ -1,6 +1,6 @@
 # Bainbridge-Island-Rideshare-App
 
-**Team member: Andrew Rose, Dalun Zhang, Jireh Radilla Zarate, Joe Linkdbeck, Justin Erickson, Thuan Nguyen**
+**Team member: Andrew Rose, Dalun Zhang, Jireh Radilla Zarate, Joe Lindbeck, Justin Erickson, Thuan Nguyen**
 
 **Proposed Project Start Date: 01/10/2022**
 
@@ -27,16 +27,16 @@ The Bainbridge Island Carpool project is to build a rideshare app for the reside
 
 ## For developers
 
+### SUPER HELPFUL LINK : https://reactnative.dev/docs/getting-started !!!
+
+
 ### Setting up the development enviornmnet on your local machine
 - Download & Install Node.Js from website (the LTS version)
 - Run 'npm -v' on your terminal to check the version of your npm and node.js version
-- Run 'npm install -g expo-cli' to install expo environment on your pc
-
-### Development environment Requirements
-
-- node version: v16.14.2
-- npm version: 8.5.0
-
+- To install expo on your pc
+```
+npm install -g expo-cli
+```
 
 ### Routines to setup repo on your machine:
 ```
@@ -59,6 +59,19 @@ npm start
 https://www.youtube.com/watch?v=0-S5a0eXPoc&t=581s (Video produced by "Programming with Mosh", contents of how to build an app with React Native. Please take some time to take a look at it if you have question.)
 
 https://www.youtube.com/watch?v=J_Clau1bYco (Video produced by "ProgrammingKnowledge2", contents of how to config GitHub on Windows, if you have problem doing that, please watch this.)
+
+### Setup Navigation between the screen
+
+- To install & setup navigation
+```
+npm install @react-navigation/native @react-navigation/native-stack
+
+```
+- To install Dependencies
+```
+expo install react-native-screens react-native-safe-area-context
+```
+(https://reactnative.dev/docs/navigation) Read the React Native documentation if you have any question.
 
 ### **PLEASE** create your branch before you start working on the project
 
