@@ -50,7 +50,6 @@ PLEASE ignore the error message and DO NOT try to troubleshoot it yourself, it w
 PLEASE follow the steps below:**
 ```
 npm install expo
-npm install
 /*Then pray*/
 npm start
 /*It should work now*/
