@@ -6,6 +6,7 @@
  * DB_PORT - Port for connection
  * DB_USER - Username for connection
  * DB_PASS - Password for connection
+ * DB_NAME - Name of database
  */
 
 const mysql = require('mysql');
@@ -15,7 +16,8 @@ let con = mysql.createConnection({
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
     user: process.env.DB_USER,
-    password: process.env.DB_PASS
+    password: process.env.DB_PASS,
+    database: process.env.DB_NAME
 });
 
 
@@ -38,7 +40,9 @@ function startConnection(callback) {
         }
 
         Logger.log("Successfully connected");
-        callback()
+        if (typeof callback == "function") {
+            callback()
+        }
     });
 }
 

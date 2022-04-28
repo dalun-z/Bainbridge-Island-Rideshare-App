@@ -2,6 +2,8 @@ require("dotenv").config();
 const Logger = require("./utils/Logger");
 const express = require("express");
 const SQL = require("./utils/sqlconn");
+const Routes = require("./routes");
+
 const app = express();
 
 
@@ -14,6 +16,8 @@ function startRoutes() {
 
     const PORT = process.env.PORT || 8080;
     console.log(PORT);
+
+    Routes.register(app);
 
     app.get("/api", (req, res) => {
         res.json({ message: "Test message sent from backend!" });
