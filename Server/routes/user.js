@@ -1,6 +1,5 @@
 const {Logger, SQL, Authenticator, CommonResponse} = require("../utils");
 const express = require("express");
-const utils = require("nodemon/lib/utils");
 
 let router = express.Router();
 
@@ -41,6 +40,40 @@ router.get("/:uuid/profile", async (req, res) => {
         res.status(200).json(result.results[0]);
     } else {
 
+    }
+});
+
+router.post("/:uuid/profile", async (req, res) => {
+    let authParams = {};
+
+    if(Authenticator.signedInAs(authParams)) {
+        //Write Query and Figure out What is required to Add User to table
+        let queryString = "";
+
+    } else {
+        CommonResponse.Unauthorized(req, res);
+    }
+});
+
+
+/**
+ * Updates User Profile information if authorized 
+ * 
+ * Requires the request body to be a json object with the following properties:
+ * fname - FUll NAME
+ * profilepic - Profile Pic HASH/ID
+ * phone - Phone Number String
+ * email - Email Address
+ * dob - Date of birth
+ * quota - Quota number
+ */
+router.put("/:uuid/profile", async(req, res) => {
+    let authParams = {};
+
+    if(Authenticator.signedInAs(authParams)) {
+        // Write Query To Update Database Table
+    } else {
+        CommonResponse.Unauthorized(req, res);
     }
 });
 
