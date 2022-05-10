@@ -1,64 +1,71 @@
 import * as React from 'react';
 import { View, Text, Button, StyleSheet, Image } from 'react-native';
+import { getData } from "../components/Utilities";
 
 const axios = require('axios');
+// Change this to be your local machine's IP
+const url = 'http://10.0.0.89:8080'
+    
+//AWS EC2 IP
+// const url = 'http://44.226.145.15:8080'
 
 const ProfileScreen = ({ navigation}) => {
-    // Change this to be your local machine's IP
-    const url = 'http://10.0.0.89:8080'
-    
-    //AWS EC2 IP
-    // const url = 'http://44.226.145.15:8080'
-
-    return (
-        <View style={styles.container}>
-          <View style = {styles.profileImageContainer}>
-            <Image source = {require('../assets/elon.png')} style = {styles.profileImageCircle} />
-            <Text style = {styles.profileImageName}>Elon Musk</Text>
-          </View>
-          
-          <View style = {styles.profileTextContainer}>
-            <View style = {styles.profileTextBox}>
-              <Text style={styles.profileTextEntry}>Username</Text>
+    if (getData()) {
+      const user = getData();
+      return (
+          <View style={styles.container}>
+            <View style = {styles.profileImageContainer}>
+              <Image source = {require('../assets/elon.png')} style = {styles.profileImageCircle} />
+              <Text style = {styles.profileImageName}>{user.first + " " + user.last}</Text>
             </View>
-            <View style = {styles.profileTextBox}>
-              <Text style={styles.profileTextEntry}>Phone Number</Text>
+            
+            <View style = {styles.profileTextContainer}>
+              <View style = {styles.profileTextBox}>
+                <Text style={styles.profileTextEntry}>{user.uid}</Text>
+              </View>
+              <View style = {styles.profileTextBox}>
+                <Text style={styles.profileTextEntry}>Phone Number</Text>
+              </View>
+              <View style = {styles.profileTextBox}>
+                <Text style={styles.profileTextEntry}>Address?</Text>
+              </View>
+              <View style = {styles.profileTextBox}>
+                <Text style={styles.profileTextEntry}>Rating</Text>
+              </View>
+              <View style = {styles.profileTextBox}>
+                <Text style={styles.profileTextEntry}>Rides Completed</Text>
+              </View>
+              <View style = {styles.profileTextBox}>
+                <Text style={styles.profileTextEntry}>Rider/Driver</Text>
+              </View>
             </View>
-            <View style = {styles.profileTextBox}>
-              <Text style={styles.profileTextEntry}>Address?</Text>
-            </View>
-            <View style = {styles.profileTextBox}>
-              <Text style={styles.profileTextEntry}>Rating</Text>
-            </View>
-            <View style = {styles.profileTextBox}>
-              <Text style={styles.profileTextEntry}>Rides Completed</Text>
-            </View>
-            <View style = {styles.profileTextBox}>
-              <Text style={styles.profileTextEntry}>Rider/Driver</Text>
-            </View>
-          </View>
-          <View style = {styles.signOutButton}>
-              <Button 
-                title="Sign out!"
-                onPress={() => navigation.navigate("Home")}
-              />
+            <View style = {styles.signOutButton}>
                 <Button 
-                title="Test Query"
-                onPress={ () => {
-                  axios.get(url + '/userTest')
-                    .then(response => {
-                      // handle success
-                      console.log(response.data);
-                    })
-                    .catch(error => {
-                      // handle error
-                      console.log(error);
-                    })}}
-              />
+                  title="Sign out!"
+                  onPress={() => navigation.navigate("Home")}
+                />
+                  <Button 
+                  title="Test Query"
+                  onPress={ () => {
+                    axios.get(url + '/userTest')
+                      .then(response => {
+                        // handle success
+                        console.log(response.data);
+                      })
+                      .catch(error => {
+                        // handle error
+                        console.log(error);
+                      })}}
+                />
+            </View>
           </View>
-        </View>
+      );
+  } else {
+    return (
+      navigation.navigate("SignIn")
     );
-};
+  };
+}
 
 export default ProfileScreen;
 

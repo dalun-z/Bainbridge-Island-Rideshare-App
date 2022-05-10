@@ -1,28 +1,40 @@
+require("dotenv").config();
+const Logger = require("./utils/Logger");
 const express = require("express");
+const SQL = require("./utils/sqlconn");
+const Routes = require("./routes");
+
 const app = express();
-app.use(express.json())
-  
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
-  
-const PORT = process.env.PORT || 8080;
-console.log(PORT)
 
-app.get("/api", (req, res) => {
-  res.json({ message: "Test message sent from backend!" });
-  });
 
-app.post("/post", (req, res) => {
+app.use(express.json());
 
-    console.log("Data from front end:")
-    console.log(req.body)
-  });
+function startRoutes() {
+    app.get("/", (req, res) => {
+        res.send("Hello World!");
+    });
 
-app.post('/signin', (req, res) => {
-  console.log("Sign in data from frontend:")
-  console.log(req.body);
-});
+    const PORT = process.env.PORT || 8080;
+    console.log(PORT);
 
-  
-app.listen(PORT, console.log(`Server started on port ${PORT}`));
+    Routes.register(app);
+
+    app.get("/api", (req, res) => {
+        res.json({ message: "Test message sent from backend!" });
+    });
+
+    app.post("/post", (req, res) => {
+        console.log("Data from front end:");
+        console.log(req.body);
+    });
+
+    app.post("/signin", (req, res) => {
+        console.log("Sign in data from frontend:");
+        console.log(req.body);
+    });
+
+    app.listen(PORT, console.log(`Server started on port ${PORT}`));
+}
+
+
+SQL.startConnection(startRoutes);

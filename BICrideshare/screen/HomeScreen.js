@@ -1,5 +1,8 @@
 import * as React from 'react';
 import { View, Text, Button, StyleSheet, StatusBar } from 'react-native';
+// import AsyncStorage from '@react-native-async-storage/async-storage';
+
+import { storeUser, getData, setUserNull } from "../components/Utilities";
 
 const axios = require('axios');
 
@@ -9,6 +12,12 @@ const HomeScreen = ({navigation}) => {
 
   // Eventually change to AWS EC2 IP
   // const url = 'http://44.226.145.15:8080'
+  const user = {
+    uid: "69",
+    first: "Andrew",
+    last: "Rose"
+  }
+  
 
     return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center'}}>
@@ -42,6 +51,24 @@ const HomeScreen = ({navigation}) => {
                   // handle error
                   console.log(error);
                 })}}
+          />
+          <Button 
+            title='Click to set username'
+            onPress={() => {
+              storeUser(user)
+            }}
+          />
+          <Button 
+            title='Click to get username'
+            onPress={() => {
+              getData()
+            }}
+          />
+          <Button 
+            title='Click to get username'
+            onPress={() => {
+              setUserNull()
+            }}
           />
         </View>
     );
