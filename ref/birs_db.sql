@@ -1,4 +1,4 @@
--- create database birs;
+CREATE DATABASE IF NOT EXISTS birs;
 
 USE birs;
 
@@ -9,7 +9,8 @@ profilepic varchar(128),
 phone varchar(16),
 email varchar(128),
 dob date,
-quota int,
+successful_rides int,
+no_shows int,
 primary key(uuid)
 );
 
