@@ -17,20 +17,15 @@ router.get("/:uuid/profile", async (req, res) => {
     let qValues = [req.params.uuid];
 
     if(Authenticator.signedInAs(authParams)) {
-        let qPromise = new Promise( (resolve, reject) => {
-            SQL.connection.query({
-                sql: query,
-                values: qValues,
-                database: "birs"
-            }, (err, results, fields) => {
-                resolve({err, results, fields});
-            });
+        let result = await SQL.query({
+            sql: query,
+            values: qValues,
+            database: "birs"
         });
-
-        let result = await qPromise;
 
         if(result.err) {
             CommonResponse.FailedQuery(req, res);
+            throw result.err;
         }
 
         if(result.results.length  == 0) {

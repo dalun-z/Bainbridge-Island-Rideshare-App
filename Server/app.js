@@ -1,7 +1,6 @@
 require("dotenv").config();
 const Logger = require("./utils/Logger");
 const express = require("express");
-const SQL = require("./utils/sqlconn");
 const Routes = require("./routes");
 
 const app = express();
@@ -37,4 +36,4 @@ function startRoutes() {
 }
 
 
-SQL.startConnection(startRoutes);
+startRoutes();

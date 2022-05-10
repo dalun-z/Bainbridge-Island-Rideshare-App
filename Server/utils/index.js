@@ -1,6 +1,6 @@
 const Authenticator = require("./Authenticator");
 const Logger = require("./Logger");
-const SQL = require("./sqlconn");
+const SQL = require("./SQL");
 const CommonResponse = require("./CommonResponse");
 
 /**

@@ -1,5 +1,4 @@
 const Logger = require("../utils/Logger");
-const con = require("../utils/sqlconn");
 const express = require("express");
 
 /**
