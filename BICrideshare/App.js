@@ -10,6 +10,8 @@ import SignInScreen from './screen/SignInScreen';
 import ProfileScreen from './screen/ProfileScreen';
 import RidesScreen from './screen/RidesScreen';
 
+import { DrawerContent } from './screen/DrawerContent';
+
 const Drawer = createDrawerNavigator();
 
 const App = () => {
@@ -19,7 +21,7 @@ const App = () => {
 
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="Home">
+      <Drawer.Navigator drawerContent={props => <DrawerContent { ...props}/>} /*initialRouteName="Home"*/ >
         <Drawer.Screen name = "Home" component={HomeScreen}/>
         <Drawer.Screen name = "SignIn" component={SignInScreen}/>
         <Drawer.Screen name = "Rides" component={RidesScreen}/>
