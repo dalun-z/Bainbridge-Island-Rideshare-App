@@ -22,7 +22,7 @@ if (!process.env.DB_USER) {
     throw "No DB User found";
 }
 
-if (!process.env.DB_PASS) {
+if (!process.env.DB_PASS && process.env.DB_PASS != '') {
     throw "No DB password found";
 }
 
@@ -49,24 +49,30 @@ class SQL {
         this.poolArgs = poolArgs;
 
         this.dbPool = mysql.createPool(this.poolArgs);
+    }
 
-        // Test MySQL connection or return error
-        let tPromise = new Promise((resolve, reject) => {
+
+    async init(callback) {
+         // Test MySQL connection or return error
+         let tPromise = new Promise((resolve, reject) => {
             this.dbPool.getConnection((err, conn) => {
                 resolve({ err, conn });
             });
         });
 
-        tPromise.then((result) => {
-            if (result.err) {
-                Logger.err("Error connecting to MySQL Database");
-                throw result.err;
-            }
+        let result = await tPromise;
 
+        if (result.err) {
+            Logger.error("Error connecting to MySQL Database");
+            throw result.err;
+        } else {
             result.conn.release();
-        });
+            Logger.log("Successfully connected to MySQL Database");
+        }
 
-        Logger.log("Successfully connected to MySQL Database");
+        if (typeof callback == "function") {
+            callback()
+        }
     }
 
 

@@ -1,5 +1,5 @@
 require("dotenv").config();
-const Logger = require("./utils/Logger");
+const {Logger, SQL} = require("./utils");
 const express = require("express");
 const Routes = require("./routes");
 
@@ -35,5 +35,4 @@ function startRoutes() {
     app.listen(PORT, console.log(`Server started on port ${PORT}`));
 }
 
-
-startRoutes();
+SQL.init(startRoutes);

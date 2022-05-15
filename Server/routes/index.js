@@ -1,5 +1,6 @@
 const userRoutes = require("./user");
 const rideRoutes = require("./ride");
+const vehicleRoutes = require("./vehicle")
 
 
 /**
@@ -10,6 +11,7 @@ const rideRoutes = require("./ride");
 function register(app) {
     app.use("/user", userRoutes);
     app.use("/ride", rideRoutes);
+    app.use("/vehicle", vehicleRoutes);
 }
 
 module.exports.register = register;

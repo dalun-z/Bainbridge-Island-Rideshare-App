@@ -22,8 +22,16 @@ function InvalidQuery(req, res) {
     });
 }
 
+function MissingParameters(req, res) {
+    res.status(400).json({
+        error: "Missing required parameters",
+        params: req.body
+    });
+}
+
 module.exports = {
     Unauthorized,
     FailedQuery,
-    InvalidQuery
+    InvalidQuery,
+    MissingParameters
 }

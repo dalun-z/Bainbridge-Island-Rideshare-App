@@ -3,11 +3,6 @@ const express = require("express");
 
 let router = express.Router();
 
-router.get("/", (req, res) => {
-    res.send("Test 123");
-});
-
-
 /**
  * Request to get user profile information of user identified by given uuid
  */
@@ -19,8 +14,7 @@ router.get("/:uuid/profile", async (req, res) => {
     if(Authenticator.signedInAs(authParams)) {
         let result = await SQL.query({
             sql: query,
-            values: qValues,
-            database: "birs"
+            values: qValues
         });
 
         if(result.err) {
